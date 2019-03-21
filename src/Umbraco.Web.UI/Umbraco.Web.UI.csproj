@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
@@ -163,6 +162,20 @@
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
     <Content Include="Config\splashes\noNodes.aspx" />
+    <Content Include="Media\17552d12081d4d01b68132c495d6576f\00000006000000000000000000000000\7373036290_5e8420bf36_b.jpg" />
+    <Content Include="Media\1bc5280b8658402789d958e2576e469b\00000006000000000000000000000000\14272036539_469ca21d5c_h.jpg" />
+    <Content Include="Media\1d0b713a022a49c8b842a2463c83a553\00000006000000000000000000000000\7373036208_30257976a0_b.jpg" />
+    <Content Include="Media\20e3a8ffad1b4fe9b48cb8461c46d2d0\00000006000000000000000000000000\7371127652_e01b6ab56f_b.jpg" />
+    <Content Include="Media\34371d0892c84015912ebaacd002c5d0\00000006000000000000000000000000\18530280048_459b8b61b2_h.jpg" />
+    <Content Include="Media\46a025d6095a4b148b961b59ca4e951c\00000006000000000000000000000000\7377957524_347859faac_b.jpg" />
+    <Content Include="Media\55514845b8bd487cb3709724852fd6bb\00000006000000000000000000000000\4730684907_8a7f8759cb_b.jpg" />
+    <Content Include="Media\662af6ca411a4c93a6c722c4845698e7\00000006000000000000000000000000\16403439029_f500be349b_o.jpg" />
+    <Content Include="Media\b76ddb4ee603401499066087984740ec\00000006000000000000000000000000\5852022091_87c5d045ab_b.jpg" />
+    <Content Include="Media\c0969cab13ab4de9819a848619ac2b5d\00000006000000000000000000000000\18095416144_44a566a5f4_h.jpg" />
+    <Content Include="Media\c09ec77f08e3466aac58c979befd3cd6\00000006000000000000000000000000\5852022211_9028df67c0_b.jpg" />
+    <Content Include="Media\cf1ab8dcad0f4a8e974b87b84777b0d6\00000006000000000000000000000000\18720470241_ff77768544_h.jpg" />
+    <Content Include="Media\eee91c05b2e84031a056dcd7f28eff89\00000006000000000000000000000000\18531852339_981b067419_h.jpg" />
+    <Content Include="Media\fa763e0d0ceb408c8720365d57e06e32\00000006000000000000000000000000\18531854019_351c579559_h.jpg" />
     <Content Include="Umbraco\Config\Lang\cs.xml" />
     <Content Include="Umbraco\Config\Lang\tr.xml" />
     <Content Include="Umbraco\Config\Lang\zh_tw.xml" />
@@ -281,6 +294,22 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Umbraco\Views\Preview\Index.cshtml" />
     <Content Include="Umbraco\Views\web.config" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\Blogpost.cshtml" />
+    <Content Include="Views\contact.cshtml" />
+    <Content Include="Views\contentPage.cshtml" />
+    <Content Include="Views\home.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\people.cshtml" />
+    <Content Include="Views\Person.cshtml" />
+    <Content Include="Views\Product.cshtml" />
+    <Content Include="Views\Products.cshtml" />
+    <Content Include="Views\MacroPartials\FeaturedProducts.cshtml" />
+    <Content Include="Views\MacroPartials\LatestBlogposts.cshtml" />
+    <Content Include="Views\Partials\CategoryLinks.cshtml" />
+    <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
+    <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
+    <Content Include="Views\Partials\SectionHeader.cshtml" />
     <None Include="Web.Debug.config.transformed" />
     <None Include="web.Template.Debug.config">
       <DependentUpon>Web.Template.config</DependentUpon>
