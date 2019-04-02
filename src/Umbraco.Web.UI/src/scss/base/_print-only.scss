@@ -1,0 +1,30 @@
+﻿@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
+    p.enviro, aside, .header__utility, .list__btnGroup {
+        display: none !important;
+    }
+    .header--withShadow{
+        box-shadow:none!important;
+    }
+    main {
+        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+        overflow-y: unset !important;
+        height: auto !important;
+        background-image: none !important;
+        padding: 32px 0 !important;
+    }
+    .reportResults--no-print{
+        display:none!important;
+    }
+    .print-only {
+        display: block !important;
+        .reportResults__content{
+            overflow:visible;
+        }
+    }
+
+}

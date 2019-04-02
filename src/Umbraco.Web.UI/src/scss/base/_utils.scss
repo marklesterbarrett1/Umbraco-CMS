@@ -1,0 +1,36 @@
+﻿.row--narrow {
+    padding-left: 64px;
+    padding-right: 64px;
+    @include media-breakpoint-up(xl) {
+        padding-left: 128px;
+        padding-right: 128px;
+    }
+}
+
+.hr--major {
+    border-top: 4px solid $brand-primary
+}
+
+.d-flex {
+    display: flex;
+}
+
+.collapse--mt-4 {
+    margin-top: $space;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-around {
+    justify-content: space-around !important;
+}
+
+.col--for-form-control {
+    max-width: 320px;
+}
+
+.mb-1 {
+   margin-bottom:$space;
+}

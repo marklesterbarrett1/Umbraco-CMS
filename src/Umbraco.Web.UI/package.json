@@ -1,0 +1,40 @@
+{
+  "name": "shoutdigital",
+  "description": "Shout Digital frontend development workflow",
+  "version": "1.7.0",
+  "author": "Dev <dev@shoutdigital.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cssnano": "^4.0.3",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-bump": "^3.1.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-dotnet-assembly-info": "^0.1.12",
+    "gulp-jslint": "^1.0.10",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "jquery-validation-unobtrusive": "3.2.10",
+    "popper.js": "^1.14.3"
+  },
+  "optionalDependencies": {},
+  "browserslist": [
+    "> 0.25%",
+    "IE 11",
+    "iOS 8"
+  ]
+}

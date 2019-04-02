@@ -1,0 +1,30 @@
+﻿.header {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: $header-height;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    z-index: $zindex-fixed;
+
+    &--withShadow {
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.15);
+    }
+
+    &__brand {
+        display: inline-block;
+        width: 286px;
+        height: 55px;
+    }
+
+    &__utility {
+        margin: auto 0 auto auto;
+        text-align: right;
+        display: flex;
+        flex-direction: row !important;
+    }
+}

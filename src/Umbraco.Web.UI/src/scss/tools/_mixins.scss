@@ -1,0 +1,124 @@
+﻿
+
+
+@mixin button-outline($color, $bg, $border, $border-width, $color-hover, $bg-hover, $border-hover) {
+    color: $color;
+    background-color: $bg;
+    border-color: $border;
+    border-width: $border-width;
+
+    &:not(:disabled) {
+        &:hover, &[aria-expanded="true"] {
+            color: $color-hover;
+            background-color: $bg-hover;
+            border-color: $border-hover;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+@mixin formControlDisabled() {
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-bg;
+    opacity: 1;
+    border-radius: 10px;
+    color: #202020;
+}
+
+@mixin button-variant( $background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+    color: color-yiq($background);
+    @include gradient-bg($background);
+    border-color: $border;
+    @include box-shadow($btn-box-shadow);
+
+    &:not(:disabled) {
+        @include hover {
+            color: color-yiq($hover-background);
+            @include gradient-bg($hover-background);
+            border-color: $hover-border;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        color: color-yiq($hover-background);
+        @include gradient-bg($hover-background);
+        border-color: $hover-border;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+    }
+}
+
+
+@mixin dropdown-toggle-arrow($border-color: $brand-primary) {
+    border: solid $border-color;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+
+
+@mixin hoverFocusActive($bgColor) {
+    &:hover {
+        background-color: lighten($bgColor, 10%);
+    }
+
+    &:focus {
+        background-color: lighten($bgColor, 20%);
+        color: #fff;
+    }
+
+    &:active, &[class*="isActive"] {
+        background-color: $bgColor;
+        color: #fff;
+    }
+}
+
+
+// Layout
+@import "mixins/clearfix";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/float";
+// Toggles
+//
+// Used in conjunction with global variables to enable certain theme features.
+
+// Utilities
+@import "mixins/breakpoints";
+@import "mixins/hover";
+@import "mixins/image";
+@import "mixins/badge";
+@import "mixins/resize";
+@import "mixins/screen-reader";
+@import "mixins/size";
+@import "mixins/reset-text";
+@import "mixins/text-emphasis";
+@import "mixins/text-hide";
+@import "mixins/text-truncate";
+@import "mixins/visibility";
+
+// // Components
+@import "mixins/alert";
+@import "mixins/buttons";
+@import "mixins/caret";
+@import "mixins/pagination";
+@import "mixins/lists";
+@import "mixins/list-group";
+@import "mixins/nav-divider";
+@import "mixins/forms";
+@import "mixins/table-row";
+
+// // Skins
+@import "mixins/background-variant";
+@import "mixins/border-radius";
+@import "mixins/box-shadow";
+@import "mixins/gradients";
+@import "mixins/transition";
+

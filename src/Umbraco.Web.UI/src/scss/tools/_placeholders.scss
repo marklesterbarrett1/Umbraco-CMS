@@ -1,0 +1,36 @@
+﻿%login__goBackLink {
+    color: $gray-lighter !important;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-weight: bold;
+}
+
+
+%btn--isLg {
+    @extend .btn;
+    @extend .btn--lg;
+    text-transform: uppercase;
+}
+
+
+%btn--isLgOutlineNone {
+    @extend .btn;
+    @extend .btn--lg;
+    @extend .btn--outlineMuted;
+}
+
+%btn--saveIcon {
+    background-image: url(/dist/images/icons/icon__save.png);
+    background-position: 16px 8px;
+    background-repeat: no-repeat;
+    text-indent: 14px;
+}
+
+
+
+%col {
+    ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}

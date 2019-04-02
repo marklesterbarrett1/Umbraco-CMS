@@ -1,0 +1,16 @@
+﻿.cookie {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: rgba($gray-lightest, 0.9);
+    box-shadow: 0px -5px 28px -15px rgba(0,0,0,0.75);
+    padding: $alert-padding-y 2rem $alert-padding-y 2rem;
+
+    &__content {
+        position: relative;
+        margin: 0 auto;
+        max-width:900px;
+    }
+}

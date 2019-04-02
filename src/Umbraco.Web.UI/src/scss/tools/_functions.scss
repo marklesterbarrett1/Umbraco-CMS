@@ -1,0 +1,170 @@
+// Retreive color Sass maps
+@function color($key: "blue") {
+    @return map-get($colors, $key);
+}
+
+
+
+@function grayscale($key: "100") {
+    @return map-get($grays, $key);
+}
+
+
+
+
+
+@function get-breakpoints($key: "md") {
+    @return map-get($grid-breakpoints, $key);
+}
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+
+
+
+
+// Replace `$search` with `$replace` in `$string`
+// Used on our SVG icon backgrounds for custom forms.
+//
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// Color contrast
+@function color-yiq($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+    @if ($yiq >= $yiq-contrasted-threshold) {
+        @return $yiq-text-dark;
+    }
+    @else {
+        @return $yiq-text-light;
+    }
+}
+
+// Retrieve color Sass maps
+@function color($key: "blue") {
+    @return map-get($colors, $key);
+}
+
+@function theme-color($key: "primary") {
+    @return map-get($theme-colors, $key);
+}
+
+@function gray($key: "100") {
+    @return map-get($grays, $key);
+}
+
+// Request a theme color level
+@function theme-color-level($color-name: "primary", $level: 0) {
+    $color: theme-color($color-name);
+    $color-base: if($level > 0, $black, $white);
+    $level: abs($level);
+
+    @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+
+
+@mixin app-make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+    // Common properties for all breakpoints
+    %grid-column {
+        position: relative;
+        width: 100%;
+        min-height: 1px; // Prevent columns from collapsing when empty
+        padding-right: ($gutter / 2);
+        padding-left: ($gutter / 2);
+    }
+
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        // Allow columns to stretch full width below their breakpoints
+        @for $i from 1 through $columns {
+            .col#{$infix}-#{$i} {
+                @extend %grid-column;
+            }
+        }
+
+        .col#{$infix},
+        .col#{$infix}-auto {
+            @extend %grid-column;
+        }
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+            .col#{$infix} {
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+            }
+
+            .col#{$infix}-auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none; // Reset earlier grid tiers
+            }
+
+            @for $i from 1 through $columns {
+                .col#{$infix}-#{$i} {
+                    @include make-col($i, $columns);
+                }
+            }
+        }
+    }
+}
+
+// Bootstrap functions
+//
+// Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
+
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+@mixin _assert-ascending($map, $map-name) {
+    $prev-key: null;
+    $prev-num: null;
+
+    @each $key, $num in $map {
+        @if $prev-num == null {
+            // Do nothing
+        }
+        @else if not comparable($prev-num, $num) {
+            @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+        @else if $prev-num >= $num {
+            @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+
+        $prev-key: $key;
+        $prev-num: $num;
+    }
+}
+
+// Starts at zero
+// Another grid mixin that ensures the min-width of the lowest breakpoint starts at 0.
+@mixin _assert-starts-at-zero($map) {
+    $values: map-values($map);
+    $first-value: nth($values, 1);
+
+    @if $first-value != 0 {
+        @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
+    }
+}

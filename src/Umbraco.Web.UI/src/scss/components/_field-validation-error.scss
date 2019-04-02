@@ -1,0 +1,63 @@
+﻿.field-validation-error {
+    display: block;
+    color: $error-color;
+    font-size: $font-size-xs;
+    margin: -6px 0 4px 0;
+
+    &__title {
+        color: $error-color;
+        margin-bottom:10px;
+    }
+
+    &--isLoginSummary {
+        font-weight: bold;
+        margin-bottom: 1rem
+    }
+
+    .field-validation-error {
+    }
+
+    &--isSummary {
+
+        @extend .alert;
+        @extend .alert--danger;
+        display: inline-block;
+        font-size: $font-size-base;
+        margin: 0 0 ($space) -24px;
+        width: 100%;
+        padding-left: 60px;
+        line-height: 1.42;
+        max-width: 66%;
+        position: relative;
+
+        &:before {
+            content: "";
+            background-image: str-replace(url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='#{$alert-danger-color}' viewBox='0 0 32 32'%3E%3Cpath d='M16 2.899l13.409 26.726h-26.819l13.409-26.726zM16 0c-0.69 0-1.379 0.465-1.903 1.395l-13.659 27.222c-1.046 1.86-0.156 3.383 1.978 3.383h27.166c2.134 0 3.025-1.522 1.978-3.383h0l-13.659-27.222c-0.523-0.93-1.213-1.395-1.903-1.395v0z'%3E%3C/path%3E%3Cpath d='M18 26c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z'%3E%3C/path%3E%3Cpath d='M16 22c-1.105 0-2-0.895-2-2v-6c0-1.105 0.895-2 2-2s2 0.895 2 2v6c0 1.105-0.895 2-2 2z'%3E%3C/path%3E%3C/svg%3E"), "#", "%23");
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+        }
+
+        &:empty {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                line-height: 1.2;
+            }
+        }
+    }
+
+    &--fullWidth{
+        margin-left:0;
+        max-width:100%;
+    }
+}

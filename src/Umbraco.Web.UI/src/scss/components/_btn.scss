@@ -1,0 +1,139 @@
+﻿.btn {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    box-shadow: none;
+
+    @include media-breakpoint-up(sm) {
+        white-space: nowrap;
+    }
+
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+    @include transition($btn-transition);
+
+    @include hover-focus {
+        text-decoration: none;
+    }
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &--disabled,
+    &:disabled {
+        opacity: $btn-disabled-opacity;
+        cursor: not-allowed;
+    }
+
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    &--half {
+        width: 48%;
+        margin: 0 2% 0 0;
+
+        & + .btn--half {
+            margin: 0 0 0 2%;
+            width: 48%;
+        }
+    }
+
+
+    &--primary {
+        @include button-variant($brand-primary, darken($brand-primary, 7.5%), darken($brand-primary, 10%), darken($brand-primary, 7.5%), darken($brand-primary, 10%));
+    }
+
+    &--outlinePrimary {
+        @include button-outline($brand-primary, transparent, transparent, 1px, darken($brand-primary, 5%), $gray-lightest, $gray-lightest);
+    }
+
+    &--outlineGrey {
+        @include button-outline($text-colour, $white, $gray-lightest, 1px, darken($text-colour, 5%), $gray-lightest, darken($gray-lightest,10%));
+    }
+
+    &--outlineNone {
+        @include button-outline($text-colour, transparent, transparent, 1px, darken($text-colour, 10%), $gray-lightest, $gray-lighter);
+    }
+
+    &--outlineMuted {
+        @include button-outline(#ccc, transparent, transparent, 1px, darken(#ccc, 10%), $gray-lightest, $gray-lighter);
+    }
+
+    &--transparent {
+        @include button-variant(transparent, transparent, $gray-lightest, $gray-lighter, $gray-lightest, $gray-lighter);
+        color: $text-colour;
+    }
+
+    &__viewAs {
+        @include button-variant(transparent, transparent, $gray-lightest, $gray-lighter, $gray-lightest, $gray-lighter);
+        color: $text-colour;
+        border-width: 2px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: $font-size-sm;
+        padding-left: $space;
+        padding-right: $space;
+        position: relative;
+        top: -3px;
+    }
+
+    &__viewAs--active {
+        @include button-variant($gray-lightest, #E2E0E0);
+    }
+
+    &__viewAs + &__viewAs {
+        margin-left: 8px;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--palette5 {
+        @include button-variant($palette-5, darken($palette-5, 7.5%), darken($palette-5, 10%), lighten($palette-5,5%), lighten($palette-5, 10%), darken($palette-5,30%));
+    }
+
+    &--lg {
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, 18px, $btn-line-height-lg, $btn-border-radius-lg);
+        font-weight: 600;
+        min-width: 200px;
+        max-width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            height: $btn-lg-height;
+        }
+    }
+
+    &--sm {
+        padding: 10px 12px;
+        font-size: $font-size-sm;
+    }
+
+    &--widthAuto {
+        min-width: 128px;
+        width: auto;
+    }
+
+    &--px-3 {
+        padding: 10px 20px;
+    }
+
+    &--wider {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &--px-3 + &--px-3 {
+        margin-left: 4px
+    }
+}

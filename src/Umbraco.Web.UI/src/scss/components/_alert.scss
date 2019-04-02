@@ -1,0 +1,61 @@
+﻿.alert {
+    position: relative;
+    margin-bottom: $alert-margin-bottom;
+    border: $alert-border-width solid transparent;
+    @include border-radius($alert-border-radius);
+    padding: $alert-padding-y ($close-font-size + $alert-padding-x * 2) $alert-padding-y $alert-padding-x;
+
+    &.alert--dismissable {
+        padding: $alert-padding-y 2rem $alert-padding-y 2rem;
+        margin-bottom: 0;
+        background-color: rgba($gray-lightest, 0.9);
+        box-shadow: 0px -5px 28px -15px rgba(0,0,0,0.75);
+    }
+
+    &.alert--success {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        box-shadow: $alert-box-shadow;
+        @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-color)
+    }
+
+    &.alert--danger {
+        a {
+            color: $alert-danger-color;
+            text-decoration: underline;
+        }
+
+        @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-color)
+    }
+
+
+
+    &.alert--slideDown {
+        transform: translateY(-64px);
+        animation: slideDown 4s 0.2s 1 ease forwards;
+    }
+
+    p:only-child, p:last-child {
+        margin-bottom: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: $alert-padding-y $alert-padding-x;
+        color: #fff;
+    }
+
+}
+
+.alert__container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1030;
+}

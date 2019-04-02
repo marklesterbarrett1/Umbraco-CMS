@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: $headings-margin-bottom;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+}
+
+h1, .h1 {
+    font-size: $h1-font-size;
+}
+
+h2, .h2 {
+    font-size: $h2-font-size;
+}
+
+h3, .h3 {
+    font-size: $h3-font-size;
+}
+
+h4, .h4 {
+    font-size: $h4-font-size;
+}
+
+h5, .h5 {
+    font-size: $h5-font-size;
+}
+
+h6, .h6 {
+    font-size: $h6-font-size;
+}
+
+
+.h6--centred {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.h3--withUnderline {
+    margin-top: (2* $space);
+    font-weight: bold;
+    padding: ($space * 1.5) ($space * 4);
+    border-bottom: 4px solid $brand-primary
+}
+
+.heading {
+    padding: 0 $space 0 0;
+    margin: 0 0 20px 0;
+    position: relative;
+    min-height: 1px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    font-size: $h1-font-size;
+}

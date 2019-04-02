@@ -1,0 +1,120 @@
+﻿
+$range-track-top: (($range-thumb-height - $range-track-height) / 2);
+
+@mixin slider-thumb() {
+    box-shadow: $range-thumb-box-shadow;
+    border: none;
+    height: $range-thumb-height;
+    width: $range-thumb-width;
+    border-radius: $range-thumb-width/2;
+    background: $range-thumb-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+
+}
+
+@mixin slider-track {
+    border: none;
+    border-radius: ($range-track-height / 2);
+    height: $range-track-height;
+    width:100%;
+    max-width: $range-track-max-width;
+    background-color: transparent;
+}
+
+.formRange {
+    position: relative;
+    width: 100%;
+    max-width: $range-track-max-width;
+    height: $range-thumb-height;
+    margin: 8px auto 6px;
+
+    &__back, &__bar {
+        background-color: $range-track-back-color;
+        border-radius: $range-track-height / 2;
+        box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.5);
+        height: $range-track-height;
+        line-height: $range-track-height;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        max-width: $range-track-max-width;
+        z-index: 1;
+        top: $range-track-top;
+    }
+
+    &__bar {
+        background-color: $range-track-selected-color;
+        z-index: 2;
+    }
+
+    &__input {
+        background: transparent;
+        cursor: ew-resize;
+        height: ($range-thumb-height + 2);
+        left: 0px;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        -webkit-appearance: none;
+        width: 100%;
+        max-width: $range-track-max-width;
+        z-index: 3;
+    }
+
+    &__input::-webkit-slider-runnable-track {
+        @include slider-track();
+    }
+
+    &__input::-moz-range-track {
+        @include slider-track();
+    }
+
+    &__input::-ms-track {
+        @include slider-track();
+    }
+
+    &__input::-ms-fill-lower {
+        @include slider-track();
+    }
+
+    &__input::-ms-fill-upper {
+        @include slider-track();
+    }
+
+    &__input:focus::-webkit-slider-runnable-track {
+        background: transparent;
+    }
+
+    &__input:focus {
+        outline: none;
+    }
+
+    &__input::-moz-focus-outer {
+        border: 0;
+    }
+
+
+    &__input::-webkit-slider-thumb {
+        @include slider-thumb();
+        margin-top: -$range-track-top;
+    }
+
+    &__input::-moz-range-thumb {
+        @include slider-thumb();
+        margin-top: -$range-track-top;
+    }
+
+    &__input::-ms-thumb {
+        @include slider-thumb();
+        margin-top: -1px !important;
+    }
+
+    &__input::-ms-ticks-before,
+    &__input::-ms-ticks-after,
+    &__input::-ms-track {
+        color: transparent;
+    }
+}
