@@ -126,6 +126,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Content Include="App_Code\GlobalSettingsExtensions.cs" />
     <Compile Include="Config\splashes\NoNodes.aspx.cs">
       <DependentUpon>noNodes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +311,15 @@
     <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
+    <Content Include="Views\Partials\Shared\Footer\References.cshtml" />
+    <Content Include="Views\Partials\Shared\Header\Logo.cshtml" />
+    <Content Include="Views\Partials\Shared\Header\Nav.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\Meta\DocType.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\Meta\Facebook.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\Meta\Seo.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\Title.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\Meta\Twitter.cshtml" />
+    <Content Include="Views\Partials\Shared\Head\References.cshtml" />
     <None Include="Web.Debug.config.transformed" />
     <None Include="web.Template.Debug.config">
       <DependentUpon>Web.Template.config</DependentUpon>

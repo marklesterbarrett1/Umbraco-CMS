@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var facebookImage = Model.Value<IPublishedContent>("facebookImage");
+}
+@if (Model.HasValue("facebookTitle"))
+{
+    <meta property="og:title" content="@Model.GetProperty("facebookTitle").GetValue()" />
+    <meta property="og:url" content="@Model.UrlAbsolute()" />
+}
+@if (Model.HasValue("facebookDescription"))
+{
+    <meta property="og:description" content="@Model.GetProperty("facebookDescription").GetValue()" />
+}
+@if (facebookImage != null)
+{
+    <meta property="og:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@(facebookImage.Url)" />
+}

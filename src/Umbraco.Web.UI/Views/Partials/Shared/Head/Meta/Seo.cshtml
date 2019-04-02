@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@if (Model.HasValue("metaDescription"))
+{
+    <meta name="description" content="@Model.GetProperty("metaDescription").GetValue()" />
+}
+@if (Model.HasValue("metaOwner"))
+{
+    <meta name="owner" content="@Model.GetProperty("metaOwner").GetValue()" />
+}
+@if (Model.HasValue("metaAuthor"))
+{
+    <meta name="author" content="@Model.GetProperty("metaAuthor").GetValue()" />
+}
+<link rel="canonical" href="@Model.UrlAbsolute()" />

@@ -30,7 +30,7 @@
     <clientDependency configSource="config\ClientDependency.config" />
 
     <appSettings>
-        <add key="Umbraco.Core.ConfigurationStatus" value="" />
+        <add key="Umbraco.Core.ConfigurationStatus" value="8.1.0" />
 	    <add key="Umbraco.Core.ReservedUrls" value="" />
         <add key="Umbraco.Core.ReservedPaths" value="" />
         <add key="Umbraco.Core.Path" value="~/umbraco" />
@@ -57,7 +57,7 @@
   -->
     <connectionStrings>
         <remove name="umbracoDbDSN" />
-        <add name="umbracoDbDSN" connectionString="" providerName="" />
+        <add name="umbracoDbDSN" connectionString="Data Source=|DataDirectory|\Umbraco.sdf;Flush Interval=1;" providerName="System.Data.SqlServerCe.4.0" />
     </connectionStrings>
 
     <system.data>
@@ -129,7 +129,7 @@
             </providers>
         </roleManager>
 
-    </system.web>
+    <machineKey validationKey="0E28DF97194A2583EE0F63365A7A23F87585642E01AFF5E480BBD1FA7DF1B5A0" decryptionKey="ED77D413682495C5031DA368335CF900CE8D3BDEBFF5E532DF097EDAF81688CA" validation="HMACSHA256" decryption="AES" /></system.web>
 
     <system.webServer>
         <validation validateIntegratedModeConfiguration="false" />
@@ -275,14 +275,8 @@
 
     <system.codedom>
         <compilers>
-            <compiler language="c#;cs;csharp" extension=".cs"
-              type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-              warningLevel="4"
-              compilerOptions="/langversion:7 /nowarn:1659;1699;1701" />
-            <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb"
-              type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-              warningLevel="4"
-              compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+"/>
+            <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:7 /nowarn:1659;1699;1701" />
+            <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
         </compilers>
     </system.codedom>
 

@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var twitterImage = Model.Value<IPublishedContent>("twitterImage");
+    var site = Model.Root();
+}
+@if (site.GetProperty("twitterHandle") != null)
+{
+    <meta name="twitter:site" content="@site.GetProperty("twitterHandle").GetValue()" />
+}
+@if (Model.HasValue("twitterTitle"))
+{
+    <meta name="twitter:title" content="@Model.GetProperty("twitterTitle").GetValue()" />
+}
+@if (Model.HasValue("twitterDescription"))
+{
+    <meta name="twitter:description" content="@Model.GetProperty("twitterDescription").GetValue()" />
+}
+@if (twitterImage != null)
+{
+    <meta name="twitter:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@(twitterImage.Url)" />
+    <meta name="twitter:card" content=@(Model.HasValue("twitterUseLargeImage")?"summary_large_image":"summary") />
+}
