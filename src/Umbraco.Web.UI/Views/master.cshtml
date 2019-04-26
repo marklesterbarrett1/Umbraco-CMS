@@ -1,9 +1,11 @@
-﻿@using Umbraco.Core.PropertyEditors
-@inherits UmbracoViewPage
-@{ Layout = null;
+﻿@inherits UmbracoViewPage
+@using Umbraco.Web.PublishedModels
+@{
+    Layout = null;
     // Get basic design settings from the homepage
 
     var root = (Home)Model.Root();
+
 
     var font = root.Font;
     var colorTheme = root.ColorTheme;
@@ -19,11 +21,47 @@
     @Html.Partial("/Views/Partials/Shared/Head/Meta/Facebook.cshtml")
     @Html.Partial("/Views/Partials/Shared/Head/Meta/Twitter.cshtml")
 
-    <link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
     @RenderSection("Header", required: false)
 </head>
 
 <body class="frontpage theme-font-@font theme-color-@colorTheme">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
     <div class="mobile-nav">
         <nav class="nav-bar">
             @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
@@ -71,12 +109,12 @@
             </div>
         </div>
     </footer>
-
+    <!--
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-    <script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>
-
+    <script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>-->
+    <script src="~/scripts/site.min.js"></script>
 </body>
 
 </html>

@@ -103,6 +103,9 @@
     <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.0.1" />
     <PackageReference Include="MiniProfiler" Version="4.0.138" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Umbraco.ModelsBuilder.Api">
+      <Version>8.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Umbraco.ModelsBuilder.Ui">
       <Version>8.0.4</Version>
     </PackageReference>
